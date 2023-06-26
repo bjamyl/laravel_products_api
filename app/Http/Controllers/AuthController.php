@@ -9,6 +9,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    // Register new users
     public function register(Request $request){
         $fields = $request->validate([
             'name'=>'required|string',
@@ -32,5 +33,43 @@ class AuthController extends Controller
 
         return response($response, 201);
 
+    }
+
+    //Login and get token
+    public function login(Request $request){
+        $fields = $request->validate([
+            'email'=> 'required|string',
+            'password'=> 'required|string'
+        ]);
+
+        //Check if email exists
+        $user = User::where('email', $fields['email'])->first();
+
+        //Check password
+        if(!$user || !Hash::check($fields['password'], $user->password)){
+            return response([
+                'message' => 'Bad credentials'
+            ], 401);
+        }
+
+
+        $token = $user->createToken('myapptoken')->plainTextToken;
+
+        $response = [
+            'user' => $user,
+            'token' => $token, 
+        ];
+
+        return response($response, 201);
+
+    }
+
+    //Logout and delete tokens
+    public function logout(Request $request){
+        auth()->user()->tokens()->delete();
+
+        return [
+            'message'=>'Logged out'
+        ];
     }
 }
