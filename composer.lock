@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa322c53454393ed775cfe4807d54a50",
+    "content-hash": "0d1260bd86e33894346f7ca6f03f3e5b",
     "packages": [
         {
             "name": "brick/math",
@@ -2993,6 +2993,52 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "sanity/sanity-php",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sanity-io/sanity-php.git",
+                "reference": "e7446468b0b6f078328dc1bc17f58e4690592423"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sanity-io/sanity-php/zipball/e7446468b0b6f078328dc1bc17f58e4690592423",
+                "reference": "e7446468b0b6f078328dc1bc17f58e4690592423",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2|^7.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^2.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sanity\\": "lib/",
+                    "SanityTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sanity.io",
+                    "email": "hello@sanity.io"
+                }
+            ],
+            "description": "PHP library for the Sanity API",
+            "support": {
+                "issues": "https://github.com/sanity-io/sanity-php/issues",
+                "source": "https://github.com/sanity-io/sanity-php/tree/v1.5.1"
+            },
+            "time": "2021-08-24T21:00:34+00:00"
         },
         {
             "name": "symfony/console",

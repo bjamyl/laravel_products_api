@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    // Relationship with listings
+    public function tokens(){
+        return $this->hasMany(ApiToken::class, 'user_id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
